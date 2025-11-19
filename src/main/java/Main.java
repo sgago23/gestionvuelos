@@ -4,10 +4,34 @@ import java.util.List;
 
 import entities.Vuelo;
 import utils.filtroVuelos;
-
+/**
+ * Clase principal del programa. Contiene las constantes de fecha usadas
+ * para filtrar los vuelos y ejecuta toda la lógica principal:
+ * <ul>
+ *     <li>Crear una lista de vuelos de prueba</li>
+ *     <li>Mostrar todos los vuelos</li>
+ *     <li>Filtrarlos según las fechas definidas {@link filtroVuelos}</li>
+ *     <li>Imprimir los resultados filtrados</li>
+ * </ul>
+ */
 public class Main {
+    /** Fecha mínima del filtro (puede ser null). */
     private static final LocalDate FECHA_INICIO = LocalDate.of(2025, 5, 18);
-    private static final LocalDate FECHA_FIN    = LocalDate.of(2025, 5, 25);
+    /** Fecha máxima del filtro (puede ser null). */
+    private static final LocalDate FECHA_FIN = LocalDate.of(2025, 5, 25);
+    /**
+     * Método de entrada del programa.
+     * <p>
+     * Realiza los siguientes pasos:
+     * <ol>
+     *     <li>Crea una lista de 10 vuelos de prueba.</li>
+     *     <li>Imprime todos los vuelos en la consola.</li>
+     *     <li>Filtra la lista de vuelos según las constantes {@link #FECHA_INICIO} y {@link #FECHA_FIN}.</li>
+     *     <li>Muestra los vuelos filtrados en la consola.</li>
+     * </ol>
+     *
+     * @param args Argumentos del programa (no utilizados en esta aplicación).
+     */
     public static void main(String[] args) {
         // 1. Crear la lista de 10 vuelos de prueba
         List<Vuelo> vuelos = crearVuelos();
@@ -25,6 +49,15 @@ public class Main {
         // 3. Imprimir por consola
         vuelosFiltrados.forEach(System.out::println);
     }
+    /**
+     * Crea y devuelve una lista de 10 vuelos de prueba con datos ficticios.
+     * <p>
+     * Los vuelos incluyen distintas aerolíneas, ciudades de salida y llegada,
+     * así como diversas fechas de salida y llegada. Esta lista se utiliza
+     * para probar la funcionalidad de filtrado del programa.
+     *
+     * @return una {@link List} de objetos {@link Vuelo} con datos de ejemplo.
+     */
     private static List<Vuelo> crearVuelos() {
         List<Vuelo> vuelos = new ArrayList<>();
 
